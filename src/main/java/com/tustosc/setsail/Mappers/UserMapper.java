@@ -1,5 +1,8 @@
 package com.tustosc.setsail.Mappers;
 
-public class UserMapper {
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.tustosc.setsail.Entiy.User;
+
+public interface UserMapper extends BaseMapper<User> {
     
 }
