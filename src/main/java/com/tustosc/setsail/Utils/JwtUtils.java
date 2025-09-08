@@ -12,7 +12,7 @@ import java.util.Random;
 public class JwtUtils {
 
     @Value("${jwt.token}")
-    public String token;
+    private String token;
 
     public String jwtBuilder(String uuid) throws Exception {
         String header=buildHeader();
