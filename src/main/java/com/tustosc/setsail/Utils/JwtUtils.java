@@ -12,7 +12,7 @@ import java.util.Random;
 public class JwtUtils {
 
     @Value("${jwt.token}")
-    private String token;
+    public String token;
 
     public String jwtBuilder(String uuid) throws Exception {
         String header=buildHeader();
@@ -22,7 +22,17 @@ public class JwtUtils {
     }
 
     public String getUuidFromJwt(String jwt){
-        return "";
+        try {
+            String[] parts = jwt.split("\\.");
+            String payload = parts[1];
+            // 解析 payload
+            Base64.Decoder decoder = Base64.getDecoder();
+            String payloadJson = new String(decoder.decode(payload));
+            JSONObject jsonObject = new JSONObject(payloadJson);
+            return jsonObject.getString("sub");
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to parse JWT", e);
+        }
     }
 
     private String buildHeader() throws JSONException {
