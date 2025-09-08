@@ -9,3 +9,5 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
 server:
   port: 8080
+jwt:
+  token: nyeu5il667kj6ht5rb
