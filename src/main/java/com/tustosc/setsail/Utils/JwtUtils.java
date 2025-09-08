@@ -31,7 +31,7 @@ public class JwtUtils {
             JSONObject jsonObject = new JSONObject(payloadJson);
             return jsonObject.getString("sub");
         } catch (Exception e) {
-            throw new RuntimeException("Failed to parse JWT", e);
+            throw new RuntimeException("Failed to parse JWT:", e);
         }
     }
 
