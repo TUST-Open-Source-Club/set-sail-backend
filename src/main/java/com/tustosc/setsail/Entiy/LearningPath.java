@@ -23,6 +23,8 @@ public class LearningPath {
 
     private String achievement;
 
+    private String imageLink;
+
     private String howManyLearned;
 
     private List<Tutorial> tutorials ;
