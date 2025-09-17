@@ -1,14 +1,15 @@
-package com.tustosc.setsail.Entiy;
-
+package com.tustosc.setsail.Entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
-@TableName("course")
-public class Course {
+@TableName("chapter")
+public class Chapter {
 
     @TableId(type = IdType.ASSIGN_UUID)
     private String id;
@@ -19,6 +20,5 @@ public class Course {
 
     private Float costTime;
 
-    private String homework;
-
+    private List<Course> courses;
 }

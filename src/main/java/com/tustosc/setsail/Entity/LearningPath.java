@@ -1,15 +1,16 @@
-package com.tustosc.setsail.Entiy;
+package com.tustosc.setsail.Entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-@TableName("tutorial")
-public class Tutorial {
+@TableName("learning_path")
+public class LearningPath {
 
     @TableId(type = IdType.ASSIGN_UUID)
     private String id;
@@ -24,5 +25,9 @@ public class Tutorial {
 
     private String howManyLearned;
 
-    private List<Chapter> chapters;
+    private List<Tutorial> tutorials ;
+
+    @JsonIgnore
+    private String tutorialIds;
+
 }

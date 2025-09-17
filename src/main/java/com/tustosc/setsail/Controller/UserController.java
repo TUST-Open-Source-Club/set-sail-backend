@@ -1,7 +1,7 @@
 package com.tustosc.setsail.Controller;
 
-import com.tustosc.setsail.Entiy.Response;
-import com.tustosc.setsail.Entiy.User;
+import com.tustosc.setsail.Entity.Response;
+import com.tustosc.setsail.Entity.User;
 import com.tustosc.setsail.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

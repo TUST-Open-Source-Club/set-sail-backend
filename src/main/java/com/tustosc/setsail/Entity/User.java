@@ -1,4 +1,4 @@
-package com.tustosc.setsail.Entiy;
+package com.tustosc.setsail.Entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

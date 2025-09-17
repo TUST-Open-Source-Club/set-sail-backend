@@ -1,21 +1,17 @@
 package com.tustosc.setsail.Service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.tustosc.setsail.Entiy.LearningPath;
-import com.tustosc.setsail.Entiy.Tutorial;
-import com.tustosc.setsail.Entiy.User;
+import com.tustosc.setsail.Entity.LearningPath;
+import com.tustosc.setsail.Entity.Tutorial;
+import com.tustosc.setsail.Entity.User;
 import com.tustosc.setsail.Mappers.LearningPathMapper;
 import com.tustosc.setsail.Mappers.TutorialMapper;
 import com.tustosc.setsail.Mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class UserService {

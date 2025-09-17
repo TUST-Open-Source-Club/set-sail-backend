@@ -1,4 +1,4 @@
-package com.tustosc.setsail.Entiy;
+package com.tustosc.setsail.Entity;
 
 import lombok.Data;
 

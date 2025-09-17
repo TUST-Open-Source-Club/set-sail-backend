@@ -1,7 +1,7 @@
 package com.tustosc.setsail.Mappers;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.tustosc.setsail.Entiy.User;
+import com.tustosc.setsail.Entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
