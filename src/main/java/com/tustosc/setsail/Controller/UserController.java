@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/userinfo")
+    @GetMapping("/auth/userinfo")
     public ResponseEntity<Response<User>> getUserInfo(@RequestParam String id) {
         Optional<User> userOptional=userService.getUserInfo(id);
         return userOptional.map(
