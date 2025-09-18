@@ -20,6 +20,8 @@ public class Tutorial {
 
     private Float costTime;
 
+    private String imageLink;
+
     private String achievement;
 
     private String howManyLearned;
