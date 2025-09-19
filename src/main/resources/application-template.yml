@@ -3,9 +3,10 @@ spring:
     name: setsail
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    username: setsail
-    password: setsail
-    # druid-spring-boot-starter ?????? druid?????? type ????????
+    username: database_username
+    password: database_password
     type: com.alibaba.druid.pool.DruidDataSource
 server:
   port: 8080
+jwt:
+  token: jwt_secret

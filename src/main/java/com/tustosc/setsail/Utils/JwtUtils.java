@@ -34,6 +34,9 @@ public class JwtUtils {
     }
 
     public JwtUtils role(Role role){
+        if(this.privileges==null){
+            this.privileges=new ArrayList<>();
+        }
         privileges.add(role.toString());
         return this;
     }
@@ -70,7 +73,7 @@ public class JwtUtils {
             Base64.Decoder decoder = Base64.getDecoder();
             String payloadJson = new String(decoder.decode(payload));
             JSONObject jsonObject = new JSONObject(payloadJson);
-            JSONArray privileges = jsonObject.getJSONArray("sub");
+            JSONArray privileges = jsonObject.getJSONArray("pri");
             List<String> privilegesList = new ArrayList<>();
             for (int i = 0; i < privileges.length(); i++) {
                 privilegesList.add(privileges.getString(i));
@@ -109,7 +112,9 @@ public class JwtUtils {
         Random random=new Random();
         jsonObject.put("jit", String.valueOf(random.nextInt(10)));
         jsonObject.put("iat", System.currentTimeMillis());
-        jsonObject.put("pri", privileges);
+        JSONArray privilegesArray = new JSONArray();
+        privileges.stream().forEach(privilegesArray::put);
+        jsonObject.put("pri", privilegesArray);
         String payload = jsonObject.toString();
         Base64.Encoder encoder = Base64.getEncoder();
         return encoder.encodeToString(payload.getBytes());
