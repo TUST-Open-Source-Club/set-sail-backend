@@ -3,6 +3,8 @@ package com.tustosc.setsail.Utils;
 import com.tustosc.setsail.Entiy.Role;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
+@RunWith(SpringRunner.class)
 
 class JwtUtilsTest {
 
