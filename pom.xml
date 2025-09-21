@@ -91,7 +91,12 @@
 			<artifactId>druid-spring-boot-starter</artifactId>
 			<version>1.2.27</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
