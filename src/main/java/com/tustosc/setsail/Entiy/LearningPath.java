@@ -3,6 +3,7 @@ package com.tustosc.setsail.Entiy;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.util.List;
@@ -27,4 +28,9 @@ public class LearningPath {
     private String howManyLearned;
 
     private List<Tutorial> tutorials ;
+
+    private String tutorialIds ;
+
+    @JsonIgnore
+    private Boolean isDeleted;
 }
