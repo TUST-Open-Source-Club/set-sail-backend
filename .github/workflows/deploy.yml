@@ -28,6 +28,7 @@ jobs:
         uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.SSH_HOST }}
+          username: 'dev'
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: target/setsail-0.0.1.jar
