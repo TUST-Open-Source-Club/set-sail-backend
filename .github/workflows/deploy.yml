@@ -36,7 +36,7 @@ jobs:
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: dev
+          username: 'dev'
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: sudo systemctl restart setsail
