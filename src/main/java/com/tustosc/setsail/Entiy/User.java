@@ -38,11 +38,17 @@ public class User implements UserDetails {
     @JsonIgnore
     private String tutorialIds;
 
+    @JsonIgnore
+    private String privilegeList;
+
     private final List<String> privileges;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return privileges.stream().map(Role::from).collect(Collectors.toList());
     }
+
+    @JsonIgnore
+    private Boolean isDeleted;
 
 }

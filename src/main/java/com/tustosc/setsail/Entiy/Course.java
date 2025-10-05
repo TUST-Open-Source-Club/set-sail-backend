@@ -4,6 +4,7 @@ package com.tustosc.setsail.Entiy;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data
@@ -20,5 +21,8 @@ public class Course {
     private Float costTime;
 
     private String homework;
+
+    @JsonIgnore
+    private Boolean isDeleted;
 
 }

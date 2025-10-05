@@ -15,6 +15,7 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
+
     @GetMapping("/course/detail")
     public Course getCourseDetail(@RequestParam String id) {
         return courseService.getCourseDetail(id);
@@ -24,5 +25,14 @@ public class CourseController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Object> updateCourse(@RequestBody Course course) {
         return courseService.updateCourse(course);
+    }
+
+    @DeleteMapping("/admin/course/delete")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ResponseEntity<Object> deleteCourse(@RequestParam String id){
+        if(courseService.deleteCourse(id)){
+            return ResponseEntity.ok(null);
+        }
+        return ResponseEntity.internalServerError().build();
     }
 }
