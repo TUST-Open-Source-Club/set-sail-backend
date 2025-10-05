@@ -21,11 +21,11 @@ jobs:
           architecture: x64
       - name: Config
         run: |
-          - cp src/main/resources/application-template.yml src/main/resources/application.yml
-          - sed -i "s/database_username/${{ secrets.DB_USER }}/g" src/main/resources/application.yml
-          - sed -i "s/database_password/${{ secrets.DB_PASS }}/g" src/main/resources/application.yml
-          - sed -i "s/jwt_secret/${{ secrets.JWT_SECRET }}/g" src/main/resources/application.yml
-          - sed -i "s/8080/${{ secrets.SERVER_PORT }}/g" src/main/resources/application.yml
+          cp src/main/resources/application-template.yml src/main/resources/application.yml
+          sed -i "s/database_username/${{ secrets.DB_USER }}/g" src/main/resources/application.yml
+          sed -i "s/database_password/${{ secrets.DB_PASS }}/g" src/main/resources/application.yml
+          sed -i "s/jwt_secret/${{ secrets.JWT_SECRET }}/g" src/main/resources/application.yml
+          sed -i "s/8080/${{ secrets.SERVER_PORT }}/g" src/main/resources/application.yml
       - name: Package
         run: mvn package
       - name: Copy file via SSH
