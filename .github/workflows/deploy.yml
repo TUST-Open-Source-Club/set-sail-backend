@@ -32,7 +32,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: target/setsail-0.0.1.jar
-          target: /home/dev/setsail.jar
+          target: /home/dev
       - name: Restart service
         uses: appleboy/ssh-action@v1
         with:
