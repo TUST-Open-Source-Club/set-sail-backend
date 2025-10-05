@@ -1,7 +1,9 @@
 package com.tustosc.setsail.Service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tustosc.setsail.Entiy.Course;
 import com.tustosc.setsail.Entiy.Response;
+import com.tustosc.setsail.Entiy.Tutorial;
 import com.tustosc.setsail.Mappers.CourseMapper;
 import org.apache.ibatis.jdbc.Null;
 import org.slf4j.Logger;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class CourseService {
@@ -59,5 +62,20 @@ public class CourseService {
             }
         }
         return responseEntity;
+    }
+
+    public boolean deleteCourse(String id){
+        boolean isSucceed=true;
+        try{
+            Course course=new Course();
+            course.setId(id);
+            course.setIsDeleted(true);
+            courseMapper.updateById(course);
+        }catch (Exception e){
+            logger.error(e.getMessage());
+            logger.error(Arrays.toString(e.getStackTrace()));
+            isSucceed=false;
+        }
+        return isSucceed;
     }
 }
