@@ -29,6 +29,16 @@ public class UserService {
     private LearningPathMapper learningPathMapper;
 
     /**
+     * 登录
+     */
+    public String userLogin(String username, String password) {
+        return "";
+    }
+
+    public String userRegister(String username, String studentId, String email, String password) {
+        return "";
+    }
+    /**
      * 查询User，自动化填充学习路线和教程
      * @param uuid 用户ID
      * @return 用户实体类
