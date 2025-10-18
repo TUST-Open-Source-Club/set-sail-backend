@@ -1,15 +1,11 @@
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - dev
+  schedule:
+    - cron: '0 0 * * *'
   push:
     branches:
-      - dev
+      - main
 jobs:
-  if-merged:
-    if: github.event.pull_request.merged == true
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,14 +28,16 @@ jobs:
         uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.SSH_HOST }}
+          username: 'dev'
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: target/setsail-0.0.1.jar
-          target: /home/dev/setsail.jar
+          target: /home/dev
       - name: Restart service
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.SSH_HOST }}
+          username: 'dev'
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: sudo systemctl restart setsail
